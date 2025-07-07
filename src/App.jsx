@@ -10,6 +10,13 @@ function App() {
       bgColor="red"
       style={{textDecoration:'underline',boderColor:'blue'}}
       ></Button>
+      <br />
+      <Button 
+      // bgColor="red"
+      style={{textDecoration:'underline',boderColor:'blue'}}
+      ></Button>
+      <br />
+      <Button><div>HELLO</div><p>mon bouton</p></Button>
     </div>
   );
 }
