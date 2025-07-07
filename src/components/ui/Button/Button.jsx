@@ -6,8 +6,11 @@ import styles from "./Button.module.css";
 // }
 
 // Type Script
-const Button = (props) => {
-   return <button className={styles.Button}>Test mon bouton</button>;
+const Button = ({style,bgColor='blue'}) => {
+  console.log(styles);
+  return <button  
+  style={{...style ,backgroundColor:bgColor}}
+  className={styles.Button}>Test mon bouton</button>;
 };
 
 export default Button;

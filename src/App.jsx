@@ -5,8 +5,11 @@ function App() {
   return (
     <div>
       Hello world!
-      <br/>
-      <Button></Button>
+      <br />
+      <Button 
+      bgColor="red"
+      style={{textDecoration:'underline',boderColor:'blue'}}
+      ></Button>
     </div>
   );
 }
