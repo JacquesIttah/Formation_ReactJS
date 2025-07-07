@@ -1,4 +1,12 @@
+import type React from "react";
+import type { ReactElement } from "react";
 import styles from "./Button.module.css";
+
+interface IButtonProps {
+  style:object;
+  bgColor:'blue' | 'green' | 'red';
+  children:string|React.ReactElement|Array<ReactElement|string>
+}
 
 // ES6
 // function Button(props) {
@@ -6,7 +14,7 @@ import styles from "./Button.module.css";
 // }
 
 // Type Script
-const Button = ({style,bgColor='blue', children}) => {
+const Button = ({style,bgColor='skyblue', children}:IButtonProps) => {
   console.log(styles);
   return <button  
   style={{...style ,backgroundColor:bgColor}}

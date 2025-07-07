@@ -5,14 +5,14 @@ function App() {
   return (
     <div>
       Hello world!
-      <br />
+      <br /><hr />
       <Button 
-      bgColor="red"
+      bgColor="green"
       style={{textDecoration:'underline',boderColor:'blue'}}
       ></Button>
       <br />
       <Button 
-      // bgColor="red"
+      bgColor="red"
       style={{textDecoration:'underline',boderColor:'blue'}}
       ></Button>
       <br />
