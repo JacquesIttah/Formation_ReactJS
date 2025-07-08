@@ -1,5 +1,5 @@
-import type React from "react";
-import type { ReactElement } from "react";
+import React, { useEffect, useState } from "react";
+import { ReactElement } from "react";
 import styles from "./Button.module.css";
 
 interface IButtonProps {
@@ -18,19 +18,29 @@ interface IButtonProps {
 // Type Script
 const Button = ({
   style,
-  bgColor = "skyblue",
+  bgColor = "blue",
   children,
   type = "button",
-  onButtonClick
+  onButtonClick,
 }: IButtonProps) => {
+  const [clicked, setClicked] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setClicked(false);
+    }, 350);
+  }, [clicked]);
+
   console.log(styles);
   return (
     <button
       style={{ ...style, backgroundColor: bgColor }}
-      className={styles.Button}
+      className={styles.Button + (clicked ? " " + styles.clicked : "")}
       type={type}
       onClick={(evt) => {
-        if(undefined !== onButtonClick) {onButtonClick()}
+        setClicked(true);
+        if (undefined !== onButtonClick) {
+          onButtonClick();
+        }
         //console.log('click on ' + evt.target.type)}
       }}
     >

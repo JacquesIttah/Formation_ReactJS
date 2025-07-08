@@ -9,3 +9,8 @@
   /* background-color: blue; */
   color: white;
 }
+
+.clicked{
+  box-shadow: 5px 5px 5px black;
+  border: 2px solid black;
+}
