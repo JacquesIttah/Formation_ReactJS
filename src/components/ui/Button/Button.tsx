@@ -5,7 +5,8 @@ import styles from "./Button.module.css";
 interface IButtonProps {
   style:object;
   bgColor:'blue' | 'green' | 'red';
-  children:string|React.ReactElement|Array<ReactElement|string>
+  children:string|React.ReactElement|Array<ReactElement|string>;
+  type?:'button' | 'submit' | 'reset';
 }
 
 // ES6
@@ -14,11 +15,14 @@ interface IButtonProps {
 // }
 
 // Type Script
-const Button = ({style,bgColor='skyblue', children}:IButtonProps) => {
+const Button = ({style,bgColor='skyblue', children, type='button' }:IButtonProps) => {
   console.log(styles);
   return <button  
   style={{...style ,backgroundColor:bgColor}}
-  className={styles.Button}>Test mon bouton {children}</button>;
+  className={styles.Button}
+  type={type}>
+    Test mon bouton {children}
+    </button>;
 };
 
 export default Button;

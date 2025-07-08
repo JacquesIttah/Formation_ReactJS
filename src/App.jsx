@@ -9,14 +9,17 @@ function App() {
       <Button 
       bgColor="green"
       style={{textDecoration:'underline',boderColor:'blue'}}
+      type="button"
       ></Button>
       <br />
       <Button 
       bgColor="red"
       style={{textDecoration:'underline',boderColor:'blue'}}
+      type="submit"
       ></Button>
       <br />
-      <Button><div>HELLO</div><p>mon bouton</p></Button>
+      <Button 
+      type="reset"><div>HELLO</div><p>mon bouton</p></Button>
     </div>
   );
 }
