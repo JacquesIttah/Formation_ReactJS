@@ -7,7 +7,7 @@ interface IButtonProps {
   bgColor: "blue" | "green" | "red";
   children: string | React.ReactElement | Array<ReactElement | string>;
   type?: "button" | "submit" | "reset";
-  onButtonClick?: Function;
+  onButtonClick? () : undefined;
 }
 
 // ES6
@@ -39,7 +39,7 @@ const Button = ({
       onClick={(evt) => {
         setClicked(true);
         if (undefined !== onButtonClick) {
-          onButtonClick();
+          onButtonClick(0);
         }
         //console.log('click on ' + evt.target.type)}
       }}

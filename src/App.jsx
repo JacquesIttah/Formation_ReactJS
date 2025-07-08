@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Button from "./components/ui/Button/Button.jsx";
+import Button from "./components/ui/Button/Button.js";
 
 function App() {
   const [counter, setCounter] = useState(0);
