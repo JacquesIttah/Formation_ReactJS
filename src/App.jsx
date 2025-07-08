@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Button from "./components/ui/Button/Button.jsx";
 
@@ -6,6 +6,13 @@ function App() {
   
   const [counter, setCounter] = useState(0);
   
+  // Changements d'état Asynchrones
+  useEffect(
+    () => {
+      console.log(counter)
+    }, [counter]
+  );
+
   return (
     <div>
       Hello world!
