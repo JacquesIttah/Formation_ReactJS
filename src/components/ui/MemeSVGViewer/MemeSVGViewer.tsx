@@ -1,49 +1,13 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 import styles from "./MemeSvgViewer.module.css";
 
+const MemeSvgViewer: React.FC<undefined> = () => {
 
+    return (
 
-interface IMemeSvgViewerProps {
+    <div className={styles.MemeSvgViewer} data-testid="MemeSvgViewer"> 
 
-  data:string
-
-}
-
-interface IMemeSvgViewerState {
-
-  value:number
-
-}
-
-const memeSvgViewerInitialState = {value:0};
-
-const MemeSvgViewer: React.FC<IMemeSvgViewerProps> = ({data=""}) => {
-
-  const [state, setstate] = useState<IMemeSvgViewerState>(
-
-    memeSvgViewerInitialState
-
-  );
-
-  useEffect(() => {
-
-    return () => {
-
-      //demontage
-
-    };
-
-  }, []);
-
-  return (
-
-    <div className={styles.MemeSvgViewer} data-testid="MemeSvgViewer">
-
-
- 
-
-      MemeSvgViewer Component props.data:{data}, state:{JSON.stringify(state)}
+      MemeSvgViewer Component 
 
     </div>
 

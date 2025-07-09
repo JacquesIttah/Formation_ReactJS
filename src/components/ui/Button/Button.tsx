@@ -7,6 +7,7 @@ interface IButtonProps {
   bgColor: "blue" | "green" | "red";
   children: string | React.ReactElement | Array<ReactElement | string>;
   type?: "button" | "submit" | "reset";
+  //onButtonClick? Function;
   onButtonClick? () : undefined;
 }
 

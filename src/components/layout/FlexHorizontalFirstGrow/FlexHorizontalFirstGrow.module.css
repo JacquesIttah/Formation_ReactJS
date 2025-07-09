@@ -1,1 +1,8 @@
-.FlexHorizontalFirstGrow {}
+.FlexHorizontalFirstGrow {
+  display: flex;
+  height: 100%;
+}
+
+.FlexHorizontalFirstGrow *:nth-child(1) {
+  flex-grow: 1;
+}

@@ -1,49 +1,16 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 import styles from "./Header.module.css";
 
 
 
-interface IHeaderProps {
+const Header: React.FC<object> = () => {
 
-  data:string
-
-}
-
-interface IHeaderState {
-
-  value:number
-
-}
-
-const headerInitialState = {value:0};
-
-const Header: React.FC<IHeaderProps> = ({data=""}) => {
-
-  const [state, setstate] = useState<IHeaderState>(
-
-    headerInitialState
-
-  );
-
-  useEffect(() => {
-
-    return () => {
-
-      //demontage
-
-    };
-
-  }, []);
-
-  return (
+    return (
 
     <div className={styles.Header} data-testid="Header">
-
-
- 
-
-      Header Component props.data:{data}, state:{JSON.stringify(state)}
+      
+        <span className={styles.meme}>Meme</span>.
+        <span className={styles.js}>js</span>
 
     </div>
 

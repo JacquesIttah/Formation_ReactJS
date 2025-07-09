@@ -1,56 +1,24 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 import styles from "./FlexVerticalThirdGrow.module.css";
 
-
-
 interface IFlexVerticalThirdGrowProps {
-
-  data:string
-
+  children: Array<React.ReactElement> | React.ReactElement;
+  style?: object;
 }
 
-interface IFlexVerticalThirdGrowState {
-
-  value:number
-
-}
-
-const flexVerticalThirdGrowInitialState = {value:0};
-
-const FlexVerticalThirdGrow: React.FC<IFlexVerticalThirdGrowProps> = ({data=""}) => {
-
-  const [state, setstate] = useState<IFlexVerticalThirdGrowState>(
-
-    flexVerticalThirdGrowInitialState
-
-  );
-
-  useEffect(() => {
-
-    return () => {
-
-      //demontage
-
-    };
-
-  }, []);
-
+const FlexVerticalThirdGrow: React.FC<IFlexVerticalThirdGrowProps> = ({
+  children,
+  style,
+}) => {
   return (
-
-    <div className={styles.FlexVerticalThirdGrow} data-testid="FlexVerticalThirdGrow">
-
-
- 
-
-      FlexVerticalThirdGrow Component props.data:{data}, state:{JSON.stringify(state)}
-
+    <div
+      className={styles.FlexVerticalThirdGrow}
+      data-testid="FlexVerticalThirdGrow"
+      style={style}
+    >
+      {children}
     </div>
-
   );
-
 };
-
-
 
 export default FlexVerticalThirdGrow;

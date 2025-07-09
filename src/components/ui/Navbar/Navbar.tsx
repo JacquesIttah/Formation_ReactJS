@@ -1,40 +1,8 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 import styles from "./Navbar.module.css";
 
 
-
-interface INavbarProps {
-
-  data:string
-
-}
-
-interface INavbarState {
-
-  value:number
-
-}
-
-const navbarInitialState = {value:0};
-
-const Navbar: React.FC<INavbarProps> = ({data=""}) => {
-
-  const [state, setstate] = useState<INavbarState>(
-
-    navbarInitialState
-
-  );
-
-  useEffect(() => {
-
-    return () => {
-
-      //demontage
-
-    };
-
-  }, []);
+const Navbar: React.FC<object> = () => {
 
   return (
 
@@ -43,7 +11,7 @@ const Navbar: React.FC<INavbarProps> = ({data=""}) => {
 
  
 
-      Navbar Component props.data:{data}, state:{JSON.stringify(state)}
+      Navbar Component 
 
     </div>
 
