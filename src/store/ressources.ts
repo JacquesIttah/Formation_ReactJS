@@ -18,11 +18,8 @@ const ressources = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder.addCase(loadAsyncRessources.fulfilled, (state, action) => {
-      state.images = action.payload;
-    });
-
-    builder.addCase(loadAsyncRessourcesMemes.fulfilled, (state, action) => {
-      state.memes = action.payload;
+      state.images = action.payload.images;
+      state.memes = action.payload.memes;
     });
   },
 });
@@ -35,22 +32,15 @@ export const loadAsyncRessources = createAsyncThunk(
   "ressources/load",
   async () => {
     // Promise (asynchrone --> await pour attendre la fin de l'execution = la promise !)
-    const primages = await fetch(`${REST_URL}/images`);
-    const result = await primages.json();
+    const primages = fetch(`${REST_URL}/images`);
+    const prmemes = fetch(`${REST_URL}/memes`);
+    const prAll = await Promise.all([primages, prmemes]);
+    const images = await prAll[0].json();
+    const memes = await prAll[1].json();
 
-    return result;
+    return { images: images, memes: memes };
   }
 );
 
-export const loadAsyncRessourcesMemes = createAsyncThunk(
-  "ressources/loadMemes",
-  async () => {
-    // Promise (asynchrone --> await pour attendre la fin de l'execution = la promise !)
-    const prmemes = await fetch(`${REST_URL}/memes`);
-    const result = await prmemes.json();
-
-    return result;
-  }
-);
 
 export default ressources.reducer;
