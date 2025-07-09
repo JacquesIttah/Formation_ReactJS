@@ -20,6 +20,10 @@ const ressources = createSlice({
     builder.addCase(loadAsyncRessources.fulfilled, (state, action) => {
       state.images = action.payload;
     });
+
+    builder.addCase(loadAsyncRessourcesMemes.fulfilled, (state, action) => {
+      state.memes = action.payload;
+    });
   },
 });
 
@@ -33,6 +37,17 @@ export const loadAsyncRessources = createAsyncThunk(
     // Promise (asynchrone --> await pour attendre la fin de l'execution = la promise !)
     const primages = await fetch(`${REST_URL}/images`);
     const result = await primages.json();
+
+    return result;
+  }
+);
+
+export const loadAsyncRessourcesMemes = createAsyncThunk(
+  "ressources/loadMemes",
+  async () => {
+    // Promise (asynchrone --> await pour attendre la fin de l'execution = la promise !)
+    const prmemes = await fetch(`${REST_URL}/memes`);
+    const result = await prmemes.json();
 
     return result;
   }
